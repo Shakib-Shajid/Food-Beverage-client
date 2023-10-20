@@ -35,8 +35,10 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">Food House</a>
-
+                {/* <a className="btn btn-ghost normal-case text-xl">Food House</a> */}
+                <div>
+                    <a className="btn btn-ghost normal-case text-xl"><img src="./foodLogo.png" className="w-20 h-12" alt="" /></a>
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

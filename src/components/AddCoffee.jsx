@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2'
 
 const AddCoffee = () => {
@@ -133,6 +134,7 @@ const AddCoffee = () => {
                 <input type="submit" value="Add Coffee" className="btn btn-block bg-black text-white" />
 
             </form>
+            <Link to="/"><input type="submit" value="Go Back" className="btn btn-block bg-white text-black mt-3" /></Link>
         </div>
     );
 };

@@ -1,28 +1,21 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
 
-// import { Link, useLocation, useNavigate } from "react-router-dom";
-// import Navbar from "../Shared/Navbar/Navbar";
-import { useContext } from "react";
-import { AuthContext } from "../Provider/AuthProvider";
-// import { GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
-// import app from '../../firebase/firebase.config'
-// import app from '../firebase/firebase.config'
-// import { FaGoogle } from 'react-icons/fa';
 
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+import { useContext, useState } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
+
+import app from '../firebase/firebase.config'
+import { GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
+
 
 
 const Login = () => {
 
-
-
     const { signIn } = useContext(AuthContext);
     const location = useLocation()
     const navigate = useNavigate()
-    console.log('location in login page', location)
-
+    console.log('location in login page' , location)
 
 
 
@@ -54,17 +47,62 @@ const Login = () => {
 
     ///////////////////////////////////////////
     //react tostify
+    //
+    const [loginError] = useState('')
+    ///google
+    const [user, setUser] = useState(null);
+    const auth = getAuth(app);
+    console.log(app)
+    const provider = new GoogleAuthProvider();
+
+    const handleGoogleSignIn = () => {
+    // console.log('google mama is coming')
+        signInWithPopup(auth , provider)
+            .then(result => {
+                const loggedInUser = result.user;
+                console.log(loggedInUser);
+                // setUser(loggedInUser);
+
+                //navigate after login
+                navigate(location?.state ? location.state : '/')
+            })
+
+
+            .catch(error => {
+                console.log('error' , error.message)
+                // setloginError(error.message)
+            })
+
+    
+    }
+
+
+    //google signout
+    const handleSignOut = () => {
+        signOut(auth)
+            .then(result => {
+                console.log(result);
+                setUser(null);
+            })
+
+            .catch(error => {
+                console.log(error)
+            })
+    }
 
 
 
+ 
 
 
-
-
-    ///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
     return (
         <div>
             <Navbar></Navbar>
+          {/* <h1 className="text-center font-semibold">This is login page</h1>   */}
+
+
+
             <div>
                 <h2 className="text-3xl my-10 text-center">Please Login</h2>
 
@@ -87,9 +125,9 @@ const Login = () => {
                         </label>
                     </div>
                     <div className="form-control mt-6">
-                        <button
-                            // onClick={handleApplyJob}
-                            className="btn btn-primary">Login</button>
+                        <button 
+                        // onClick={handleApplyJob}
+                         className="btn btn-primary">Login</button>
                     </div>
                 </form>
 
@@ -97,8 +135,41 @@ const Login = () => {
             </div>
 
 
+            {/* google */}
+            <div className=" btn  btn-error form-control md:w-3/4 lg:w-1/2 mx-auto mt-4">
 
 
+                {
+                    user ? <button className="" onClick={handleSignOut}>Google Sign Out</button>
+                        : <button className="" onClick={handleGoogleSignIn}> Login with Google</button>
+                }
+
+
+                {user && <div>
+                    <h3>User: {user?.displayName}</h3>
+                </div>
+
+                }
+                
+            </div>
+
+
+
+            {
+
+                loginError && <p className="text-red-500">{loginError}</p>
+            }
+
+
+
+
+
+          
+
+
+          
+
+          
         </div>
     );
 };

@@ -24,7 +24,7 @@ function App() {
 
     <div>
       <Navbar></Navbar>
-      <div className='m-20'>
+      <div className='m-5 md:m-20'>
         <Banner></Banner>
         <h1 className='text-6xl text-center text-purple-600 my-20'>Product List</h1>
         <div className='grid md:grid-cols-2 gap-6 '>

@@ -47,10 +47,10 @@ const CoffeeCard = ({ coffees, setCoffees, coffee }) => {
 
     return (
         // <Link to='/coffee'>
-        <div className="card border card-side bg-base-100 shadow-xl mb-5 " data-aos="flip-left">
-            <img src={photo} className="h-3/4 w-2/4 mr-4 flex my-auto" alt="Movie" />
-            <div className=" w-1/2 pr-4  my-auto">
-                <div className="text-start space-y-1">
+        <div className="card border card-side bg-base-100 shadow-xl mb-5 flex flex-col lg:flex-row ">
+            <img src={photo} className="h-3/4 w-2/4 lg:mr-4 mx-auto my-auto" alt="Movie" />
+            <div className="w-full lg:w-1/2 pr-4  my-auto">
+                <div className="text-start space-y-1 p-3">
                     <h2 className="text-3xl font-bold text-green-600">Name: {name}</h2>
                     <p><span className="font-bold"> Quantity:</span> {quantity}</p>
                     <p><span className="font-bold"> Supplier Name:</span> {supplier}</p>
@@ -60,15 +60,12 @@ const CoffeeCard = ({ coffees, setCoffees, coffee }) => {
                     {/* <p>Photo URL: {photo}</p> */}
                 </div>
                 <div className="card-actions mt-4">
-                    <div className="btn-group btn-group-horizontal space-x-3">
+                    <div className="btn-group  lg:btn-group-horizontal space-x-2 lg:space-x-3">
                         {/* <button className="btn">View</button> */}
 
                         <Link to={`coffee/${_id}`}>
-
-                            <button className="btn">View</button>
+                            <button className="btn ml-4 lg:ml-0">View</button>
                         </Link>
-
-
                         <Link to={`updateCoffee/${_id}`}>
                             <button className="btn">Update</button>
                         </Link>
