@@ -46,8 +46,8 @@ const AddCoffee = () => {
 
 
     return (
-        <div className="bg-[#F4F3F0] p-24">
-            <h2 className="text-3xl font-extrabold">Add coffe</h2>
+        <div className="bg-[#F4F3F0] p-24 " data-aos="fade-up">
+            <h2 className="text-3xl font-extrabold">Add coffee</h2>
             <form onSubmit={handleCoffee}>
                 {/* form row */}
                 <div className="md:flex mb-7">

@@ -1,7 +1,7 @@
 
 const Banner = () => {
     return (
-        <div className="mt-10">
+        <div className="mt-10" data-aos="fade-down-right">
             <div className="hero w-full min-h-[300px] md:min-h-[600px] " style={{ backgroundImage: 'url("./food.jpg")' }}>
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-center text-neutral-content">
