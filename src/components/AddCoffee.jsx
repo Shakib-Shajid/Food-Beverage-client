@@ -98,7 +98,7 @@ const AddCoffee = () => {
                 <div className="md:flex mb-7">
                     <div className="form-control md:w-1/2">
                         <label className="label">
-                            <span className="label-text">Desc</span>
+                            <span className="label-text">Description</span>
                         </label>
                         <label className="input-group">
 

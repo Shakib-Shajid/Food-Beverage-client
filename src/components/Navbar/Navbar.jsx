@@ -16,10 +16,8 @@ const Navbar = () => {
     const navLinks = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/addCoffee">Add Product</NavLink></li>
-        {/* <li><NavLink to="/coffee">Career</NavLink></li> */}
-
+        <li><NavLink to="/mycart">My Cart</NavLink></li>
         <li><NavLink to="/login">Login</NavLink></li>
-        {/* <li><NavLink to ="/gallery">Gallery</NavLink></li> */}
 
 
 

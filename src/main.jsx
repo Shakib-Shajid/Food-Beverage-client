@@ -21,8 +21,10 @@ import CoffeeDetails from './components/Navbar/CoffeeDetails.jsx';
 // import Cart from './Cart.jsx';
 import Login from './components/Login.jsx';
 import Register from './components/Register.jsx';
+import NotFound from './components/NotFound.jsx';
 import AuthProvider from './Provider/AuthProvider.jsx';
 import PrivateRoute from './components/PrivateRoute.jsx';
+import Mycart from './components/Mycart.jsx';
 
 
 const router = createBrowserRouter([
@@ -33,26 +35,15 @@ const router = createBrowserRouter([
   },
 
   {
-
     path: "addCoffee",
     element: <PrivateRoute><AddCoffee></AddCoffee></PrivateRoute>
   },
+  {
+    path: "mycart",
+    element: <PrivateRoute><Mycart></Mycart></PrivateRoute>
+  },
 
 
-  // {
-  // path:"/coffee" ,
-  //   element:<CoffeeDetails></CoffeeDetails>,
-  //   loader: () => fetch(`http://localhost:5000/addProduct`)
-  //   // loader: ({ params }) => fetch(`http://localhost:5000/addProduct/${params.id}`)
-
-  // },
-
-  // {
-  //  path:'coffee/:id',
-  //   element: <CoffeeCard></CoffeeCard>,
-  //   loader: ({ params }) => fetch(`http://localhost:5000/addProduct/${params.id}`)
-
-  // },
 
 
   {
@@ -69,22 +60,10 @@ const router = createBrowserRouter([
     loader: ({ params }) => fetch(`http://localhost:5000/addProduct/${params.id}`)
 
   },
-  // {
-
-  //   path: '/signup',
-  //   element:<SignUp></SignUp>
-  // },
-
-
-
-
-  // {
-  //   path:'/cart',
-  //   element:<Cart></Cart>,
-  //   loader: () => fetch('http://localhost:5000/addProduct')
-
-
-  // },
+  {
+    path: '*',
+    element: <NotFound></NotFound>
+  },
   {
     path: '/login',
     element: <Login></Login>
@@ -96,17 +75,6 @@ const router = createBrowserRouter([
 
   },
 
-
-
-  // {
-  //   path:'/users',
-  //   element:<Users></Users>,
-  //   loader: () => fetch('http://localhost:5000/user')
-  // },
-  {
-    path: '/signin',
-    // element:<SignIn></SignIn>
-  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
