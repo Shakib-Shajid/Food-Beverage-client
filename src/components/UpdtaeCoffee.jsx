@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 
 const UpdtaeCoffee = () => {
     const coffee = useLoaderData();
-    const {_id, name, quantity, supplier, taste, category, details, photo } = coffee;
+    const { _id, name, quantity, supplier, taste, category, details, photo } = coffee;
 
 
     const handleUpdateCoffee = event => {
@@ -24,7 +24,7 @@ const UpdtaeCoffee = () => {
         const updatedCoffee = { name, quantity, supplier, taste, category, details, photo }
         console.log(updatedCoffee);
         //send data to the server
-        fetch(`http://localhost:5000/coffee/${_id}`, {
+        fetch(`http://localhost:5000/addProduct/${_id}`, {
 
             method: 'PUT',
             headers: {
@@ -35,7 +35,7 @@ const UpdtaeCoffee = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.modifiedCount> 0) {
+                if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'Sucess!',
                         text: 'Coffee updated successfully',

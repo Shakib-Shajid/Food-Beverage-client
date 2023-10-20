@@ -23,7 +23,7 @@ const CoffeeCard = ({ coffees, setCoffees, coffee }) => {
 
 
 
-                fetch(`http://localhost:5000/coffee/${_id}`, {
+                fetch(`http://localhost:5000/addProduct/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

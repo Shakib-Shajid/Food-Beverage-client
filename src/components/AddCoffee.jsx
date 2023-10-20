@@ -9,17 +9,17 @@ const AddCoffee = () => {
         const form = event.target;
 
         const name = form.name.value;
-        const quantity = form.quantity.value;
-        const supplier = form.supplier.value;
-        const taste = form.taste.value;
-        const category = form.category.value;
-        const details = form.details.value;
+        const brand = form.brand.value;
+        const type = form.type.value;
+        const price = form.price.value;
+        const desc = form.desc.value;
+        const rating = form.rating.value;
         const photo = form.photo.value;
 
-        const newCoffee = { name, quantity, supplier, taste, category, details, photo }
+        const newCoffee = { name, brand, type, price, desc, rating, photo }
         console.log(newCoffee);
         //send data to the server
-        fetch('http://localhost:5000/coffee', {
+        fetch('http://localhost:5000/addProduct', {
 
             method: 'POST',
             headers: {
@@ -61,13 +61,13 @@ const AddCoffee = () => {
                             <input type="text" name="name" placeholder="Coffee name" className="input input-bordered w-full " />
                         </label>
                     </div>
-                    <div className="form-control md:w-1/2  ml-4">
+                    <div className="form-control md:w-1/2  md:ml-4">
                         <label className="label">
-                            <span className="label-text">Available Quantity</span>
+                            <span className="label-text">Available brand</span>
                         </label>
                         <label className="input-group">
 
-                            <input type="text" name="quantity" placeholder="Available Quantity" className="input input-bordered w-full" />
+                            <input type="text" name="brand" placeholder="brand name" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -75,20 +75,20 @@ const AddCoffee = () => {
                 <div className="md:flex mb-7">
                     <div className="form-control md:w-1/2">
                         <label className="label">
-                            <span className="label-text">Supplier Name</span>
+                            <span className="label-text">Type</span>
                         </label>
                         <label className="input-group">
 
-                            <input type="text" name="supplier" placeholder="Supplier" className="input input-bordered w-full " />
+                            <input type="text" name="type" placeholder="Type" className="input input-bordered w-full " />
                         </label>
                     </div>
-                    <div className="form-control md:w-1/2  ml-4">
+                    <div className="form-control md:w-1/2  md:ml-4">
                         <label className="label">
-                            <span className="label-text">Taste</span>
+                            <span className="label-text">Price</span>
                         </label>
                         <label className="input-group">
 
-                            <input type="text" name="taste" placeholder="Taste" className="input input-bordered w-full" />
+                            <input type="text" name="price" placeholder="Price" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -98,20 +98,20 @@ const AddCoffee = () => {
                 <div className="md:flex mb-7">
                     <div className="form-control md:w-1/2">
                         <label className="label">
-                            <span className="label-text">Category</span>
+                            <span className="label-text">Desc</span>
                         </label>
                         <label className="input-group">
 
-                            <input type="text" name="category" placeholder="Category" className="input input-bordered w-full " />
+                            <input type="text" name="desc" placeholder="description" className="input input-bordered w-full " />
                         </label>
                     </div>
-                    <div className="form-control md:w-1/2  ml-4">
+                    <div className="form-control md:w-1/2  md:ml-4">
                         <label className="label">
-                            <span className="label-text">Details</span>
+                            <span className="label-text">Rating</span>
                         </label>
                         <label className="input-group">
 
-                            <input type="text" name="details" placeholder="Details" className="input input-bordered w-full" />
+                            <input type="text" name="rating" placeholder="Rating" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>

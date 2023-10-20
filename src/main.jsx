@@ -42,15 +42,15 @@ const router = createBrowserRouter([
   // {
   // path:"/coffee" ,
   //   element:<CoffeeDetails></CoffeeDetails>,
-  //   loader: () => fetch(`http://localhost:5000/coffee`)
-  //   // loader: ({ params }) => fetch(`http://localhost:5000/coffee/${params.id}`)
+  //   loader: () => fetch(`http://localhost:5000/addProduct`)
+  //   // loader: ({ params }) => fetch(`http://localhost:5000/addProduct/${params.id}`)
 
   // },
 
   // {
   //  path:'coffee/:id',
   //   element: <CoffeeCard></CoffeeCard>,
-  //   loader: ({ params }) => fetch(`http://localhost:5000/coffee/${params.id}`)
+  //   loader: ({ params }) => fetch(`http://localhost:5000/addProduct/${params.id}`)
 
   // },
 
@@ -81,7 +81,7 @@ const router = createBrowserRouter([
   // {
   //   path:'/cart',
   //   element:<Cart></Cart>,
-  //   loader: () => fetch('http://localhost:5000/coffee')
+  //   loader: () => fetch('http://localhost:5000/addProduct')
 
 
   // },
