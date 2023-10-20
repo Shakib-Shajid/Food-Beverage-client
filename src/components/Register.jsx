@@ -1,28 +1,40 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { AuthContext } from "../../Provider/AuthProvider";
+// import { AuthContext } from "../../Provider/AuthProvider";
 
-import { useState } from "react";
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { useState } from "react";
+
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+// import { AuthContext } from "../Provider/AuthProvider";
+import Navbar from "./Navbar/Navbar";
+
+//
+// import { Link } from "react-router-dom";
+// import Navbar from "../Shared/Navbar/Navbar";
+// import { useContext } from "react";
+// import {  useState } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 
+
+
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+
+
 const Register = () => {
-    //react tostify
 
-    const handleApplyJob = () => {
-
-        toast('You have Register successfully')
-    }
-
-    //
-    const [loginError, setloginError] = useState('')
     const { createUser } = useContext(AuthContext);
+
+
+
+
 
     const handleRegister = e => {
         e.preventDefault();
-        // console.log(e.currentTarget)
+        console.log(e.currentTarget)
         const form = new FormData(e.currentTarget);
 
 
@@ -30,22 +42,10 @@ const Register = () => {
         const photo = form.get('photo');
         const email = form.get('email');
         const password = form.get('password');
-        // console.log(form.get);
+        console.log(form.get);
         console.log(name, photo, email, password);
+
         //create user
-        setloginError('');
-
-        if (password.length < 6) {
-            setloginError('please should 6 character in password');
-            return;
-        }
-        else if (!/[A-Z]/.test(password)) {
-            setloginError('Your password should have one upper at least chareacters')
-            return;
-
-        }
-        // create user
-
         createUser(email, password)
             .then(result => {
                 console.log(result.user)
@@ -53,27 +53,18 @@ const Register = () => {
                     displayName: name,
                     photoURL: photo
                 })
-                    .then(res => {
-                        console.log(res);
-                        window.location.reload();
-                    })
-                    .catch(error => {
-                        console.log(error.message);
-                    })
             })
             .catch(error => {
-                setloginError(error.message)
+
                 console.error(error)
             })
 
 
-
     }
 
-
-
     return (
-        <div data-aos="zoom-in">
+        <div>
+            <Navbar></Navbar>
             <div>
                 <h2 className="text-3xl my-10 text-center">Please Register</h2>
 
@@ -108,19 +99,24 @@ const Register = () => {
                         </label>
                     </div>
                     <div className="form-control mt-6">
-                        <button onClick={handleApplyJob} className="btn btn-primary">Register</button>
+                        <button
+                            //  onClick={handleApplyJob} 
+                            className="btn btn-primary">Register</button>
                     </div>
                 </form>
 
                 <p className="text-center mt-4">Already  have an account <Link to="/login" className="text-blue-600 font-bold">Login</Link></p>
             </div>
-            {
+
+
+
+            {/* {
 
                 loginError && <p className="text-red-500">{loginError}</p>
-            }
+            } */}
 
 
-            <ToastContainer />
+            {/* <ToastContainer /> */}
         </div>
     );
 };

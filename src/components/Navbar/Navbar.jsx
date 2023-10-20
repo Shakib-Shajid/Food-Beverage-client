@@ -1,39 +1,31 @@
 import { NavLink, Link } from "react-router-dom"
-import userDefaultpic from "../../../assets/user.png"
-import { useContext, useEffect } from "react";
-import { AuthContext } from "../../../Provider/AuthProvider"
-import { signOut, getAuth } from "firebase/auth";
-import app from '../../../firebase/firebase.config'
-import Aos from 'aos';
-import 'aos/dist/aos.css';
+import userPic from "../../../public/user.png"
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
-    useEffect(() => {
-        Aos.init()
-    }, [])
+
 
     const handleSignOut = () => {
-        const auth = getAuth(app);
         logOut()
             .then()
             .catch()
-
-        signOut(auth)
-            .then()
-            .catch()
-
     }
 
+    const navLinks = <>
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/addCoffee">Add Product</NavLink></li>
+        {/* <li><NavLink to="/coffee">Career</NavLink></li> */}
 
-    const navLinks =
-        <>
-            <li><NavLink to="/">Home</NavLink></li>
-            <li><NavLink to="/AddProduct">Add Product</NavLink></li>
-            <li><NavLink to="/MyCart">My Cart</NavLink></li>
-            <li><NavLink to="/login">Login</NavLink></li>
-        </>
+        <li><NavLink to="/login">Login</NavLink></li>
+        {/* <li><NavLink to ="/gallery">Gallery</NavLink></li> */}
+
+
+
+    </>
     return (
-        <div data-aos='fade-down' className="navbar bg-base-100">
+        <div className="navbar bg-base-100">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -43,7 +35,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-base md:text-xl">Food & Beverage</a>
+                <a className="btn btn-ghost normal-case text-xl">Food House</a>
 
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -66,7 +58,7 @@ const Navbar = () => {
                         :
                         <div className="flex items-center gap-4">
                             <div className="w-10 rounded-full">
-                                <img src={userDefaultpic} />
+                                <img src={userPic} />
                             </div>
                             <Link to="/login">
                                 <button className="btn">Login</button>
@@ -76,16 +68,8 @@ const Navbar = () => {
 
 
             </div>
-
-
-
-
-
-
-
         </div>
     );
 };
 
 export default Navbar;
-
