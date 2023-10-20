@@ -3,13 +3,17 @@ import NewsCard from "./NewsCard";
 import Footer from "../Footer/Footer";
 import About from "../About/About";
 import NewsLetter from "../NewsLetter/NewsLetter";
+import { useState } from "react";
 
 
 
 const Home = () => {
     // load the data of news
-    const news = useLoaderData();
+    // const news = useLoaderData();
     // console.log(news)
+
+    const loadedCoffees = useLoaderData();
+    const [coffees, setCoffees] = useState(loadedCoffees)
 
     return (
         <div>
@@ -32,7 +36,7 @@ const Home = () => {
                 <div className="md:col-span-2 grid lg:grid-cols-3 gap-5">
 
                     {
-                        news.map(aNews => <NewsCard key={aNews.id}
+                        loadedCoffees.map(aNews => <NewsCard key={aNews.id}
                             news={aNews}
                         ></NewsCard>)
                     }

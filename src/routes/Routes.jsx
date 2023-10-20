@@ -20,7 +20,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('/career-fairs.json')
+                loader: () => fetch('http://localhost:5000/addProduct')
             },
             {
                 path: '/news/:id',
