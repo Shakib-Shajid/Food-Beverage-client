@@ -15,7 +15,7 @@ const Login = () => {
     const { signIn } = useContext(AuthContext);
     const location = useLocation()
     const navigate = useNavigate()
-    console.log('location in login page', location)
+    console.log('location in login page' , location)
 
 
 
@@ -56,8 +56,8 @@ const Login = () => {
     const provider = new GoogleAuthProvider();
 
     const handleGoogleSignIn = () => {
-        // console.log('google mama is coming')
-        signInWithPopup(auth, provider)
+    // console.log('google mama is coming')
+        signInWithPopup(auth , provider)
             .then(result => {
                 const loggedInUser = result.user;
                 console.log(loggedInUser);
@@ -69,11 +69,11 @@ const Login = () => {
 
 
             .catch(error => {
-                console.log('error', error.message)
+                console.log('error' , error.message)
                 // setloginError(error.message)
             })
 
-
+    
     }
 
 
@@ -92,14 +92,14 @@ const Login = () => {
 
 
 
+ 
 
 
-
-    ///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
     return (
         <div>
             <Navbar></Navbar>
-            {/* <h1 className="text-center font-semibold">This is login page</h1>   */}
+          {/* <h1 className="text-center font-semibold">This is login page</h1>   */}
 
 
 
@@ -125,9 +125,9 @@ const Login = () => {
                         </label>
                     </div>
                     <div className="form-control mt-6">
-                        <button
-                            // onClick={handleApplyJob}
-                            className="btn btn-primary">Login</button>
+                        <button 
+                        // onClick={handleApplyJob}
+                         className="btn btn-primary">Login</button>
                     </div>
                 </form>
 
@@ -150,7 +150,7 @@ const Login = () => {
                 </div>
 
                 }
-
+                
             </div>
 
 
@@ -161,6 +161,15 @@ const Login = () => {
             }
 
 
+
+
+
+          
+
+
+          
+
+          
         </div>
     );
 };
