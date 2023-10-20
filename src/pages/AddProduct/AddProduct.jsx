@@ -19,7 +19,7 @@ const AddProduct = () => {
         console.log(newFood);
 
 
-        fetch('http://localhost:5000/addProduct', {     //link new hobe
+        fetch('http://localhost:5000/addProduct', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
