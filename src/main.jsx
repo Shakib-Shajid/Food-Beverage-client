@@ -31,7 +31,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-    loader: () => fetch('https://food-beverage-server-c498yxb4r-shakib-shajid.vercel.app/addProduct')
+    loader: () => fetch('https://food-beverage-server-silk.vercel.app/addProduct')
   },
 
   {
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
   {
     path: 'coffee/:id',
     element: <PrivateRoute><CoffeeDetails></CoffeeDetails></PrivateRoute>,
-    loader: ({ params }) => fetch(`https://food-beverage-server-c498yxb4r-shakib-shajid.vercel.app/addProduct/${params.id}`)
+    loader: ({ params }) => fetch(`https://food-beverage-server-silk.vercel.app/${params.id}`)
 
 
   },
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
   {
     path: 'updateCoffee/:id',
     element: <UpdtaeCoffee></UpdtaeCoffee>,
-    loader: ({ params }) => fetch(`https://food-beverage-server-c498yxb4r-shakib-shajid.vercel.app/addProduct/${params.id}`)
+    loader: ({ params }) => fetch(`https://food-beverage-server-silk.vercel.app/${params.id}`)
 
   },
   {
