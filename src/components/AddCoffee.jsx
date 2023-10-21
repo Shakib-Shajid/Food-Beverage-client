@@ -19,7 +19,7 @@ const AddCoffee = () => {
         const newCoffee = { name, brand, type, price, desc, rating, photo }
         console.log(newCoffee);
         //send data to the server
-        fetch('http://localhost:5000/addProduct', {
+        fetch('https://food-beverage-server-69gkthqrn-shakib-shajid.vercel.app/addProduct', {
 
             method: 'POST',
             headers: {
@@ -32,7 +32,7 @@ const AddCoffee = () => {
                 console.log(data);
                 if (data.insertedId) {
                     Swal.fire({
-                        title: 'Sucess!',
+                        title: 'Success!',
                         text: 'User Added successfully',
                         icon: 'success',
                         confirmButtonText: 'Cool'
@@ -63,7 +63,7 @@ const AddCoffee = () => {
                     </div>
                     <div className="form-control md:w-1/2  md:ml-4">
                         <label className="label">
-                            <span className="label-text">Available brand</span>
+                            <span className="label-text">Brand</span>
                         </label>
                         <label className="input-group">
 

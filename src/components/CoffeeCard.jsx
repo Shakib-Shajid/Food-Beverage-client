@@ -23,7 +23,7 @@ const CoffeeCard = ({ coffees, setCoffees, coffee }) => {
 
 
 
-                fetch(`http://localhost:5000/addProduct/${_id}`, {
+                fetch(`https://food-beverage-server-69gkthqrn-shakib-shajid.vercel.app/addProduct/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

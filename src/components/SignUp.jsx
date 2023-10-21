@@ -17,7 +17,7 @@
 //             //new user has been created databse jokhon korbo
 //             const createdAt = result.user?.metadata?.creationTime;
 //             const user = {email, createdAt: createdAt};
-//             fetch('http://localhost:5000/user ',{
+//             fetch('https://food-beverage-server-69gkthqrn-shakib-shajid.vercel.app/user ',{
 
 //               method: 'POST',
 //                 headers: {

@@ -30,8 +30,6 @@ const Register = () => {
 
 
 
-
-
     const handleRegister = e => {
         e.preventDefault();
         console.log(e.currentTarget)
@@ -109,11 +107,6 @@ const Register = () => {
             </div>
 
 
-
-            {/* {
-
-                loginError && <p className="text-red-500">{loginError}</p>
-            } */}
 
 
             {/* <ToastContainer /> */}

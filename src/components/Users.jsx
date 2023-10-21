@@ -6,26 +6,26 @@ const Users = () => {
     const loadedUsers = useLoaderData();
     const [users, setUsers] = useState(loadedUsers);
 
-    const handleDelete = id =>{
+    const handleDelete = id => {
 
-        fetch(`http://localhost:5000/user/${id}`,{
+        fetch(`https://food-beverage-server-69gkthqrn-shakib-shajid.vercel.app/user/${id}`, {
             method: 'DELETE'
         })
-        .then(res =>res.json())
-        .then(data => {
-        if(data.deletedCount> 0){
-            console.log('deleted ok');
-            //remove the user from the UI
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    console.log('deleted ok');
+                    //remove the user from the UI
 
-            const remainingUsers = users.filter(user => user._id !==id);
-            setUsers(remainingUsers)
+                    const remainingUsers = users.filter(user => user._id !== id);
+                    setUsers(remainingUsers)
 
-        }
+                }
 
 
 
-    })
-}
+            })
+    }
     return (
         <div>
             <h2>users: {loadedUsers.length}</h2>
@@ -44,7 +44,7 @@ const Users = () => {
                     </thead>
                     <tbody>
                         {/* row 1 */}
-                      {
+                        {
 
                             users.map(user => <tr key={user._id}>
                                 <th>1</th>
@@ -52,15 +52,15 @@ const Users = () => {
                                 <td>{user.createdAt}</td>
                                 <td>{user.lastLoggedAt}</td>
                                 <td>
-                                    <button onClick= { () => handleDelete(user._id)}
-                                    className="btn">X</button>
+                                    <button onClick={() => handleDelete(user._id)}
+                                        className="btn">X</button>
                                 </td>
                             </tr>)
 
 
 
-                      }
-                       
+                        }
+
                     </tbody>
                 </table>
             </div>
@@ -70,4 +70,4 @@ const Users = () => {
 
 
 
- export default Users;
+export default Users;
