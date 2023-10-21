@@ -23,7 +23,7 @@ const CoffeeCard = ({ coffees, setCoffees, coffee }) => {
 
 
 
-                fetch(`https://food-beverage-server-69gkthqrn-shakib-shajid.vercel.app/addProduct/${_id}`, {
+                fetch(`https://food-beverage-server-oc54x60tv-shakib-shajid.vercel.app/addProduct/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -33,7 +33,7 @@ const CoffeeCard = ({ coffees, setCoffees, coffee }) => {
 
                             Swal.fire(
                                 'Deleted!',
-                                'Your Coffe has been deleted.',
+                                'Your Coffee has been deleted.',
                                 'success'
                             )
 

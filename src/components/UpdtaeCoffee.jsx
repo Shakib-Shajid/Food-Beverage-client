@@ -24,7 +24,7 @@ const UpdtaeCoffee = () => {
         const updatedCoffee = { name, brand, type, price, desc, rating, photo }
         console.log(updatedCoffee);
         //send data to the server
-        fetch(`http://localhost:5000/addProduct/${_id}`, {
+        fetch(`https://food-beverage-server-c498yxb4r-shakib-shajid.vercel.app/addProduct/${_id}`, {
 
             method: 'PUT',
             headers: {

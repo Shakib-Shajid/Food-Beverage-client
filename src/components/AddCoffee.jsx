@@ -19,7 +19,7 @@ const AddCoffee = () => {
         const newCoffee = { name, brand, type, price, desc, rating, photo }
         console.log(newCoffee);
         //send data to the server
-        fetch('https://food-beverage-server-69gkthqrn-shakib-shajid.vercel.app/addProduct', {
+        fetch('https://food-beverage-server-oc54x60tv-shakib-shajid.vercel.app/addProduct', {
 
             method: 'POST',
             headers: {
