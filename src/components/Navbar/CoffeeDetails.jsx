@@ -3,7 +3,6 @@
 import { useLoaderData } from "react-router-dom";
 
 
-// faiza
 
 
 const CoffeeDetails = () => {

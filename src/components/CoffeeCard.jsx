@@ -20,9 +20,6 @@ const CoffeeCard = ({ coffees, setCoffees, coffee }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-
-
-
                 fetch(`https://food-beverage-server-oc54x60tv-shakib-shajid.vercel.app/addProduct/${_id}`, {
                     method: 'DELETE'
                 })
